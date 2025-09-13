@@ -47,18 +47,6 @@ const Hero = () => {
     }
   };
 
-  const letterVariants = {
-    hidden: { opacity: 0, y: 50, rotateX: -90 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      rotateX: 0,
-      transition: {
-        duration: 0.6
-      }
-    }
-  };
-
   const scrollToImpact = () => {
     const element = document.getElementById('impact');
     if (element) {
