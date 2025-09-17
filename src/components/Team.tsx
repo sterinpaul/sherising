@@ -42,7 +42,7 @@ const Team = () => {
   ];
 
   return (
-    <section ref={ref} id="team" className="bg-[#E8DDD4] py-20">
+    <section ref={ref} id="team" className="bg-white py-20">
       <motion.div 
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
         variants={containerVariants}
@@ -53,13 +53,13 @@ const Team = () => {
         <div className="text-center mb-16">
           <motion.div
             variants={titleVariants}
-            className="inline-block"
+            className="md:w-1/2 mx-auto"
             whileHover={{ 
               scale: 1.02,
               transition: { duration: 0.2 }
             }}
           >
-            <div className="bg-[#C4A173] text-white px-8 py-4 rounded-full text-lg md:text-xl font-medium shadow-lg">
+            <div className="bg-[#C4A173] text-white px-8 py-4 rounded-2xl text-lg md:text-xl font-medium inner-shadow">
               Meet Our Team
             </div>
           </motion.div>

@@ -68,7 +68,7 @@ const Impact = () => {
   ];
 
   return (
-    <section ref={ref} id="impact" className="bg-[#E8DDD4] py-20">
+    <section ref={ref} id="impact" className="bg-gradient-to-b from-white to-[#c4b4a7] py-20">
       <motion.div 
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
         variants={containerVariants}
@@ -79,7 +79,7 @@ const Impact = () => {
         <div className="text-center mb-12">
           <motion.h2 
             variants={titleVariants}
-            className="text-5xl md:text-6xl lg:text-7xl font-bold text-[#8B4513] mb-8 tracking-wide"
+            className="text-6xl font-bold text-[#4D361E] mb-8 tracking-wide"
             whileHover={{ 
               scale: 1.02,
               textShadow: "0px 0px 20px rgba(139, 69, 19, 0.3)",

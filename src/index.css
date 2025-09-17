@@ -52,3 +52,11 @@ html {
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
+.inner-shadow{
+  box-shadow: inset 0 1px 5px 0px rgb(136, 121, 112);
+}
+
+.top-shadow{
+  box-shadow: inset 0 5px 5px 0px rgb(136, 121, 112);
+}

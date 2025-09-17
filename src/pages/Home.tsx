@@ -9,7 +9,7 @@ import {
   Impact,
   Resources,
   Articles,
-  Involve
+  Involve,
 } from '../components';
 
 const Home = () => {

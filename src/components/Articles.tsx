@@ -1,6 +1,5 @@
 import { motion, useInView } from 'framer-motion';
 import { useState, useRef } from 'react';
-import { ChevronDownIcon } from '@heroicons/react/24/solid';
 
 const Articles = () => {
   const ref = useRef(null);
@@ -83,7 +82,7 @@ const Articles = () => {
         <div className="mb-16">
           <motion.h1 
             variants={titleVariants}
-            className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 tracking-wide"
+            className="text-5xl font-bold text-white mb-4 tracking-wide"
             whileHover={{ 
               scale: 1.02,
               textShadow: "0px 0px 20px rgba(255, 255, 255, 0.3)",
@@ -148,17 +147,17 @@ const Articles = () => {
 
         {/* Load More Button */}
         {hasMoreArticles && (
-          <div className="text-center">
+          <div className="grid place-items-center">
             <motion.button
               onClick={loadMoreArticles}
               disabled={isLoading}
-              className="w-16 h-16 bg-[#8B4513] rounded-full flex items-center justify-center shadow-lg hover:bg-[#6B3410] transition-colors disabled:opacity-50"
+              className="w-16 h-16 bg-[#C4A173] rounded-full flex items-center justify-center shadow-lg hover:bg-[#6B3410] transition-colors disabled:opacity-50"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               animate={isLoading ? { rotate: 360 } : {}}
               transition={isLoading ? { duration: 1, repeat: Infinity, ease: "linear" } : {}}
             >
-              <ChevronDownIcon className="w-8 h-8 text-white" />
+              <img src="/icons/arrow.svg" className="-rotate-90" alt="Arrow Right" />
             </motion.button>
           </div>
         )}

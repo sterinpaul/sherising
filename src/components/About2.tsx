@@ -1,7 +1,7 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 
-const About = () => {
+const About2 = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
@@ -21,16 +21,6 @@ const About = () => {
     visible: { opacity: 1, y: 0 }
   };
 
-  const subtitleVariants = {
-    hidden: { opacity: 0, y: 30, scale: 0.95 },
-    visible: { opacity: 1, y: 0, scale: 1 }
-  };
-
-  const paragraphVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0 }
-  };
-
   const sdgSectionVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0 }
@@ -40,65 +30,105 @@ const About = () => {
     hidden: { opacity: 0, scale: 0.5, rotate: -180 },
     visible: { opacity: 1, scale: 1, rotate: 0 }
   };
+  const slideInFromLeft = {
+    hidden: { opacity: 0, x: -100 },
+    visible: { 
+      opacity: 1, 
+      x: 0,
+      transition: {
+        duration: 1
+      }
+    }
+  };
+
+  const slideInFromRight = {
+    hidden: { opacity: 0, x: 100 },
+    visible: { 
+      opacity: 1, 
+      x: 0,
+      transition: {
+        duration: 1
+      }
+    }
+  };
+
+  const scaleIn = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: { 
+      opacity: 1, 
+      scale: 1,
+      transition: {
+        duration: 0.8
+      }
+    }
+  };
+
+  const staggerContainer = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.4,
+        delayChildren: 0.2
+      }
+    }
+  };
 
   return (
     <section ref={ref} id="about" className="bg-[#f7f7f7e7] pt-20">
-      {/* Main About Section */}
       <motion.div 
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
         variants={containerVariants}
         initial="hidden"
         animate={isInView ? "visible" : "hidden"}
       >
-        <div className="text-center mb-16">
-          <motion.h2 
-            variants={titleVariants}
-            className="text-6xl font-bold text-[#4D361E] mb-8 tracking-wide"
-            whileHover={{ 
-              scale: 1.02,
-              textShadow: "0px 0px 20px rgba(139, 69, 19, 0.3)",
-              transition: { duration: 0.3 }
-            }}
-          >
-            ABOUT US
-          </motion.h2>
-          
-          <motion.div
-            variants={subtitleVariants}
-            className="md:w-1/2 mx-auto"
-          >
-            <div className="bg-[#C4A173] text-white px-8 py-4 rounded-2xl text-lg md:text-xl font-medium inner-shadow">
-              Our Story, Our Vision, Our Why
-            </div>
-          </motion.div>
-        </div>
+        
 
         <div className="max-w-5xl mx-auto space-y-8 text-black">
-          <motion.p 
-            variants={paragraphVariants}
-            className="text-lg md:text-xl leading-relaxed font-bold"
+          <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={staggerContainer}
+          className="mb-16"
+        >
+          <motion.h1 
+            className="text-7xl lg:text-8xl xl:text-9xl font-bold leading-tight mb-8"
           >
-            From a small online classroom in Kerala to a growing global community, She Rising began with one simple belief: education has the 
-            power to change lives not just through textbooks, but through connection, courage, and care.
-          </motion.p>
-          
-          <motion.p 
-            variants={paragraphVariants}
-            className="text-lg md:text-xl leading-relaxed font-medium"
-          >
-            At 18, our founder began tutoring young girls in her neighborhood, blending academic support with open conversations about body image, 
-            menstruation, and gender roles, topics that were often left unaddressed. What began as small gatherings soon grew into a movement: a 
-            space where education became a tool for empowerment, not just achievement.
-          </motion.p>
-          
-          <motion.p 
-            variants={paragraphVariants}
-            className="text-lg md:text-xl leading-relaxed font-medium"
-          >
-            Today, She Rising is rooted in both grassroots action and academic thought. From workshops and podcasts to public events and 
-            accessible resources, we bridge the gap between higher education and everyday people. Our mission is to create spaces where 
-            knowledge is not a privilege, but a shared power where girls, students, and communities rise together.
-          </motion.p>
+            <motion.div 
+              variants={slideInFromLeft}
+              className="text-[#C4A173] mb-1 tracking-wide"
+              whileHover={{ 
+                scale: 1.05, 
+                textShadow: "0px 0px 8px rgb(196,161,115)",
+                transition: { duration: 0.2 }
+              }}
+            >
+              ELEVATE
+            </motion.div>
+            <motion.div 
+              variants={scaleIn}
+              className="text-[#4D361E] mb-1 tracking-wide"
+              whileHover={{ 
+                scale: 1.05,
+                textShadow: "0px 0px 8px rgb(139,69,19)",
+                transition: { duration: 0.2 }
+              }}
+            >
+              ENRICH
+            </motion.div>
+            <motion.div 
+              variants={slideInFromRight}
+              className="text-[#C4A173] tracking-wide"
+              whileHover={{ 
+                scale: 1.05,
+                textShadow: "0px 0px 8px rgb(196,161,115)",
+                transition: { duration: 0.2 }
+              }}
+            >
+              EMPOWER
+            </motion.div>
+          </motion.h1>
+        </motion.div>
         </div>
       </motion.div>
 
@@ -159,4 +189,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default About2;

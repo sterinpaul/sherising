@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { ChevronDownIcon } from '@heroicons/react/24/solid';
 
 const Hero = () => {
 
@@ -55,16 +54,17 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen flex flex-col justify-center items-center pt-20 pb-16 relative overflow-hidden bg-[#E8DDD4]">
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex-grow flex flex-col justify-center">
+    <section id="home" className="min-h-screen my-auto py-20 overflow-hidden bg-gradient-to-b from-white to-[#c4b4a7]">
+      <div className="max-w-5xl h-full flex items-center mx-auto space-y-8 text-black">
+      
         <motion.div
           initial="hidden"
           animate="visible"
           variants={staggerContainer}
-          className="mb-16"
+          className="mb-16 px-20 xl:px-0"
         >
           <motion.h1 
-            className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-bold leading-tight mb-8"
+            className="text-7xl md:text-8xl xl:text-9xl font-bold leading-tight mb-8"
           >
             <motion.div 
               variants={slideInFromLeft}
@@ -79,7 +79,7 @@ const Hero = () => {
             </motion.div>
             <motion.div 
               variants={scaleIn}
-              className="text-[#8B4513] mb-1 tracking-wide"
+              className="text-[#4D361E] mb-1 tracking-wide"
               whileHover={{ 
                 scale: 1.05,
                 textShadow: "0px 0px 8px rgb(139,69,19)",
@@ -101,6 +101,7 @@ const Hero = () => {
             </motion.div>
           </motion.h1>
         </motion.div>
+      
       </div>
       
       {/* Circular Call-to-Action Button */}
@@ -108,11 +109,12 @@ const Hero = () => {
         initial={{ opacity: 0, scale: 0.8, y: 50 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ delay: 1.6, duration: 0.8, ease: "easeOut" }}
-        className="absolute bottom-8 right-8"
+        className="absolute bottom-8 right-20 flex items-center gap-4"
       >
+        <div className="text-[#6f360d] text-sm font-light leading-tight">Jump to Our Impact</div>
         <motion.button 
           onClick={scrollToImpact}
-          className="w-32 h-32 bg-[#F5F1ED] rounded-full shadow-xl hover:bg-[#EFEBE7] transition-colors duration-300 flex flex-col items-center justify-center group relative border-2 border-[#D4C4B0]"
+          className="w-32 h-32 rounded-full shadow-2xl hover:bg-[#EFEBE7] transition-colors duration-300 flex flex-col items-center justify-center border-1 border-[#bcbbba]"
           whileHover={{ 
             scale: 1.08,
             boxShadow: "0 15px 40px rgba(139, 69, 19, 0.15)",
@@ -129,7 +131,6 @@ const Hero = () => {
             }
           }}
         >
-          <div className="text-[#8B4513] text-sm font-semibold leading-tight">Jump to Our Impact</div>
           <motion.div 
             className="text-center mb-2 flex justify-center"
             initial={{ opacity: 0 }}
@@ -146,7 +147,6 @@ const Hero = () => {
               ease: "easeInOut"
             }}
           >
-            <ChevronDownIcon className="w-7 h-7 text-[#8B4513]" />
           </motion.div>
         </motion.button>
       </motion.div>

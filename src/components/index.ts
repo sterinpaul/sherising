@@ -3,7 +3,6 @@ export { default as Hero } from './Hero';
 export { default as Team } from './Team';
 export { default as Involve } from './Involve';
 export { default as Articles } from './Articles';
-export { default as Testimonials } from './Testimonials';
 export { default as About } from './About';
 export { default as Loader } from './Loader';
 export { default as Impact } from './Impact';
