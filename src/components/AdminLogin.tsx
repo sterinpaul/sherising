@@ -1,7 +1,10 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { authUtils } from "../utils/auth";
 
 const AdminLogin = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: "",
     password: ""
@@ -13,6 +16,13 @@ const AdminLogin = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [focusedField, setFocusedField] = useState("");
+
+  // Redirect if already authenticated
+  useEffect(() => {
+    if (authUtils.isAuthenticated()) {
+      navigate('/dashboard');
+    }
+  }, [navigate]);
 
   // Animation variants
   const containerVariants = {
@@ -84,13 +94,16 @@ const AdminLogin = () => {
 
     setIsLoading(true);
     
-    // Simulate API call
     try {
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      console.log("Login attempt:", formData);
-      // Handle successful login here
+      await authUtils.login(formData.email, formData.password);
+      // Redirect to dashboard on successful login
+      navigate('/dashboard');
     } catch (error) {
       console.error("Login failed:", error);
+      setErrors({
+        email: "",
+        password: "Invalid email or password"
+      });
     } finally {
       setIsLoading(false);
     }
