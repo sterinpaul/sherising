@@ -1,5 +1,8 @@
 {
   "buildCommand": "npm ci && npm run build",
+  "env": {
+    "ROLLUP_NO_NATIVE": "1"
+  },
   "functions": {
     "app/api/**/*.js": {
       "runtime": "nodejs18.x"
