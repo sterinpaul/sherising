@@ -1,9 +1,11 @@
 import { motion, useInView } from 'framer-motion';
 import { useState, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Articles = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const navigation = useNavigate()
 
   const [visibleArticles, setVisibleArticles] = useState(10);
   const [isLoading, setIsLoading] = useState(false);
@@ -125,6 +127,7 @@ const Articles = () => {
                 y: -5,
                 transition: { duration: 0.3 }
               }}
+              onClick={()=>navigation(`/article/${article.id}`)}
             >
               <div className="bg-white rounded-2xl p-6 h-48 flex flex-col justify-end shadow-lg hover:shadow-xl transition-shadow duration-300">
                 {/* Placeholder for article image */}

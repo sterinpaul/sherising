@@ -32,7 +32,7 @@ const Involve = () => {
   };
 
   return (
-    <section ref={ref} id="contact" className="bg-[#C4A173] py-20">
+    <section ref={ref} id="contact" className="bg-[#C4A173] py-24">
       <motion.div 
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
         variants={containerVariants}

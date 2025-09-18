@@ -7,3 +7,5 @@ export { default as About } from './About';
 export { default as Loader } from './Loader';
 export { default as Impact } from './Impact';
 export { default as Resources } from './Resources';
+export { default as ErrorBoundary } from './ErrorBoundary';
+export { default as NotFound } from './NotFound';

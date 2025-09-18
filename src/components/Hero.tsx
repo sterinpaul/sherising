@@ -2,46 +2,13 @@ import { motion } from 'framer-motion';
 
 const Hero = () => {
 
-  const slideInFromLeft = {
-    hidden: { opacity: 0, x: -100 },
-    visible: { 
-      opacity: 1, 
-      x: 0,
-      transition: {
-        duration: 1
-      }
-    }
-  };
-
-  const slideInFromRight = {
-    hidden: { opacity: 0, x: 100 },
-    visible: { 
-      opacity: 1, 
-      x: 0,
-      transition: {
-        duration: 1
-      }
-    }
-  };
-
-  const scaleIn = {
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: { 
-      opacity: 1, 
-      scale: 1,
-      transition: {
-        duration: 0.8
-      }
-    }
-  };
-
   const staggerContainer = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.4,
-        delayChildren: 0.2
+        staggerChildren: 0.2,
+        delayChildren: 0.3
       }
     }
   };
@@ -54,55 +21,54 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen my-auto py-20 overflow-hidden bg-gradient-to-b from-white to-[#c4b4a7]">
-      <div className="max-w-5xl h-full flex items-center mx-auto space-y-8 text-black">
-      
+    <section id="home" className="min-h-screen overflow-hidden bg-gradient-to-b from-white to-[#c4b4a7] relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-screen flex items-center">
         <motion.div
           initial="hidden"
           animate="visible"
           variants={staggerContainer}
-          className="mb-16 px-20 xl:px-0"
+          className="w-full"
         >
           <motion.h1 
-            className="text-7xl md:text-8xl xl:text-9xl font-bold leading-tight mb-8"
+            className="text-7xl sm:text-8xl lg:text-9xl xl:text-[10rem] font-bold leading-none text-left"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
           >
             <motion.div 
-              variants={slideInFromLeft}
-              className="text-[#C4A173] mb-1 tracking-wide"
+              className="text-[#C4A173] mb-2 tracking-wider"
               whileHover={{ 
-                scale: 1.05, 
+                scale: 1.02, 
                 textShadow: "0px 0px 8px rgb(196,161,115)",
-                transition: { duration: 0.2 }
+                transition: { duration: 0.3 }
               }}
             >
               ELEVATE
             </motion.div>
             <motion.div 
-              variants={scaleIn}
-              className="text-[#4D361E] mb-1 tracking-wide"
+              className="text-[#4D361E] mb-2 tracking-wider"
               whileHover={{ 
-                scale: 1.05,
-                textShadow: "0px 0px 8px rgb(139,69,19)",
-                transition: { duration: 0.2 }
+                scale: 1.02,
+                textShadow: "0px 0px 8px rgb(77,54,30)",
+                transition: { duration: 0.3 }
               }}
             >
               ENRICH
             </motion.div>
             <motion.div 
-              variants={slideInFromRight}
-              className="text-[#C4A173] tracking-wide"
+              className="text-[#C4A173] tracking-wider"
               whileHover={{ 
-                scale: 1.05,
+                scale: 1.02,
                 textShadow: "0px 0px 8px rgb(196,161,115)",
-                transition: { duration: 0.2 }
+                transition: { duration: 0.3 }
               }}
             >
               EMPOWER
             </motion.div>
           </motion.h1>
         </motion.div>
-      
       </div>
+      
       
       {/* Circular Call-to-Action Button */}
       <motion.div 
