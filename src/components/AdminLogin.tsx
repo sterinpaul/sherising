@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useState, useRef } from "react";
+import { useState } from "react";
 
 const AdminLogin = () => {
   const [formData, setFormData] = useState({
@@ -22,6 +22,7 @@ const AdminLogin = () => {
       transition: {
         staggerChildren: 0.2,
         delayChildren: 0.1,
+        duration: 0.6
       },
     },
   };
@@ -30,8 +31,7 @@ const AdminLogin = () => {
     hidden: { opacity: 0, y: 20 },
     visible: { 
       opacity: 1, 
-      y: 0,
-      transition: { duration: 0.6, ease: "easeOut" }
+      y: 0
     },
   };
 
@@ -40,8 +40,7 @@ const AdminLogin = () => {
     visible: { 
       opacity: 1, 
       scale: 1, 
-      y: 0,
-      transition: { duration: 0.8, ease: "easeOut" }
+      y: 0
     },
   };
 

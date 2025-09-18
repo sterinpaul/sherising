@@ -1,4 +1,5 @@
-import React, { Component, ErrorInfo, ReactNode } from 'react';
+import { Component } from 'react';
+import type { ErrorInfo, ReactNode } from 'react';
 import { motion } from 'framer-motion';
 
 interface Props {
@@ -38,7 +39,7 @@ class ErrorBoundary extends Component<Props, State> {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+            transition={{ duration: 0.6 }}
             className="max-w-md w-full text-center"
           >
             <motion.div
@@ -49,7 +50,7 @@ class ErrorBoundary extends Component<Props, State> {
             >
               <motion.div
                 animate={{ rotate: [0, 10, -10, 0] }}
-                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                transition={{ duration: 2, repeat: Infinity }}
                 className="text-white text-4xl"
               >
                 ⚠️
@@ -105,7 +106,7 @@ class ErrorBoundary extends Component<Props, State> {
               </motion.button>
             </motion.div>
 
-            {process.env.NODE_ENV === 'development' && this.state.error && (
+            {import.meta.env.DEV && this.state.error && (
               <motion.details
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
